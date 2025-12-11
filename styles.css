@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(180deg, #f5f5f7 0%, #fff 100%);
+    color: #1d1d1f;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+header h1 {
+    font-size: 56px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid #d2d2d7;
+    padding-bottom: 0;
+}
+
+.tab-link {
+    text-decoration: none;
+    padding: 12px 24px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #86868b;
+    position: relative;
+    transition: color 0.3s;
+    display: inline-block;
+}
+
+.tab-link:hover, .tab-link.active {
+    color: #1d1d1f;
+}
+
+.tab-link.active {
+    font-weight: 500;
+}
+
+.tab-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #0071e3;
+}
+
+.selectors-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 20px;
+    align-items: center;
+    margin: 40px 0;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.model-dropdown {
+    width: 100%;
+    padding: 12px 40px 12px 16px;
+    font: 17px inherit;
+    border: 1px solid #d2d2d7;
+    border-radius: 8px;
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231d1d1f' d='M6 9L1 4h10z'/%3E%3C/svg%3E") no-repeat right 16px center;
+    color: #1d1d1f;
+    cursor: pointer;
+    appearance: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.model-dropdown:hover {
+    border-color: #86868b;
+}
+
+.model-dropdown:focus {
+    outline: none;
+    border-color: #0071e3;
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+}
+
+.vs-divider-selector {
+    font: 600 20px/1 inherit;
+    color: #86868b;
+    padding: 0 16px;
+}
+
+.products-comparison {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-top: 40px;
+}
+
+.product-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card, .placeholder {
+    background: #fff;
+    border-radius: 18px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.placeholder {
+    text-align: center;
+    color: #86868b;
+    font-size: 17px;
+    min-height: 200px;
+    justify-content: center;
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+.product-name {
+    font: 600 28px/1 inherit;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.product-release {
+    font-size: 17px;
+    color: #86868b;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.specs-table tr {
+    border-bottom: 1px solid #f5f5f7;
+}
+
+.specs-table td {
+    padding: 12px 0;
+    font-size: 17px;
+}
+
+.specs-table td:first-child {
+    font-weight: 500;
+    width: 40%;
+}
+
+.specs-table td:last-child {
+    color: #86868b;
+    text-align: right;
+}
+
+.vs-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.vs-divider span {
+    font: 600 24px/1 inherit;
+    color: #86868b;
+    background: #f5f5f7;
+    padding: 12px 24px;
+    border-radius: 50px;
+}
+
+@media (max-width: 1024px) {
+    .products-comparison {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .vs-divider {
+        padding: 20px 0 0;
+    }
+    
+    .vs-divider span {
+        transform: rotate(90deg);
+    }
+    
+    .selectors-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .vs-divider-selector {
+        padding: 10px 0;
+        text-align: center;
+    }
+    
+    header h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px 16px;
+    }
+    
+    header h1 {
+        font-size: 32px;
+    }
+    
+    .tabs {
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+    
+    .tab-link {
+        padding: 10px 16px;
+        font-size: 15px;
+    }
+    
+    .product-card {
+        padding: 30px 20px;
+    }
+    
+    .product-name {
+        font-size: 24px;
+    }
+    
+    .specs-table td {
+        font-size: 15px;
+        padding: 10px 0;
+    }
+}
